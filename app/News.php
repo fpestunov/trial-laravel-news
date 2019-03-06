@@ -11,4 +11,9 @@ class News extends Model
     {
         return $this->hasOne(Category::class);
     }
+
+    public function scopeFreshFirst($query)
+    {
+        return $query->orderBy('id', 'desc');
+    }    
 }

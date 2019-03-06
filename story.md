@@ -81,3 +81,7 @@ Route::get('/news/categories/{$category}', 'CategoriesController@index');
 ```
 php artisan make:controller CategoriesController
 ```
+
+### добавим сортировку новостей по дате
+
+Сортируем по дате и *времени создания* от новых к старым.
