@@ -23,6 +23,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view()->composer('layouts.sidebar', function($view) {
+            $categories = \App\Category::has('news')->pluck('name');
+            $view->with(compact('categories'));
+        });
     }
 }
