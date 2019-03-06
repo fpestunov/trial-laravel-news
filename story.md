@@ -63,3 +63,7 @@ factory(App\News::class, 10)->create();
 - Sport
 
 В таблице `news` выборочно меняем значения столбца `category_id`, чтобы новости были из разных категорий.
+
+### создаем шаблоны страниц
+
+В качестве CSS-фрэймворка используем [Bootstrap](https://getbootstrap.com)
