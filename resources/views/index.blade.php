@@ -2,21 +2,11 @@
 
 @section ('content')
 
-    <div class="news-post">
-        <h2 class="news-title"><a href="#">News title</a></h2>
-        <p class="news-meta">January 1, 2019</p>
-    </div>
-    <div class="news-post">
-        <h2 class="news-title">News title</h2>
-        <p class="news-meta">January 1, 2019</p>
-    </div>
-    <div class="news-post">
-        <h2 class="news-title">News title</h2>
-        <p class="news-meta">January 1, 2019</p>
-    </div>
-    <div class="news-post">
-        <h2 class="news-title">News title</h2>
-        <p class="news-meta">January 1, 2019</p>
-    </div>
+    @foreach ($news as $item)
+        <div class="news-post">
+            <h2 class="news-title"><a href="{{ route('news.id', ['id' => $item->id]) }}">{{ $item->title }}</a></h2>
+            <p class="news-meta">{{ $item->created_at->toFormattedDateString()}}</p>
+        </div>
+    @endforeach
 
 @endsection
