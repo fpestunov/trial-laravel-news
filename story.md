@@ -70,3 +70,14 @@ factory(App\News::class, 10)->create();
 
 ### реализуем вывод новостей и категорий на главной странице
 
+### реализуем вывод новостей по выбранной категорий
+
+Добавим новый маршрут:
+```
+Route::get('/news/categories/{$category}', 'CategoriesController@index');
+```
+
+Создадим контроллер:
+```
+php artisan make:controller CategoriesController
+```

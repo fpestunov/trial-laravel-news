@@ -2,6 +2,8 @@
 
 Route::get('/', 'NewsController@index');
 
+Route::get('/news/categories/{category}', 'CategoriesController@index');
+
 Route::get('/news/{id}', 'NewsController@show')->name('news.id');
 
 Route::get('/manager/news/create', 'NewsController@create');
