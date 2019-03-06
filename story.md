@@ -31,3 +31,35 @@
 | PUT/PATCH | /manager/news/{id} | update | news.update |
 | DELETE | /manager/news/{id} | destroy | news.destroy |
 
+### создаем модели, контроллер, миграции
+php artisan make:controller NewsController -r
+php artisan make:model News -m -f
+php artisan make:model Category -m
+
+### создаем базу данных, вносим настройки базы данных в файл `.env`
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=homestead
+DB_USERNAME=homestead
+DB_PASSWORD=secret
+```
+
+Выполняем миграцию:
+```
+php artisan migrate
+```
+### наполняем базу данных данными
+```
+php artisan tinker
+
+factory(App\News::class, 10)->create();
+```
+
+Заполняем таблицу `categories` следующими значениями:
+- Auto
+- Life
+- Sport
+
+В таблице `news` выборочно меняем значения столбца `category_id`, чтобы новости были из разных категорий.
