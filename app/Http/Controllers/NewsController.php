@@ -65,7 +65,7 @@ class NewsController extends Controller
      * @param  \App\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function edit(News $news)
+    public function edit(News $newsItem)
     {
         //
     }
@@ -77,7 +77,7 @@ class NewsController extends Controller
      * @param  \App\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, News $news)
+    public function update(Request $request, News $newsItem)
     {
         //
     }
@@ -88,8 +88,9 @@ class NewsController extends Controller
      * @param  \App\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function destroy(News $news)
+    public function destroy(News $newsItem)
     {
-        //
+        $newsItem->delete();
+        return back();
     }
 }

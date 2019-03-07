@@ -21,8 +21,14 @@
           <td>{{ $item->category->name }}</td>
           <td>{{ $item->created_at->toFormattedDateString()}}</td>
           <td>
-            <a href="{{ route('news-edit.id', ['id' => $item->id]) }}">Edit</a>
-            <a href="{{ route('news-delete.id', ['id' => $item->id]) }}">Delete</a>
+            <div class="btn-group" role="group" aria-label="Edit & Delete">
+              <a href="{{ route('news-edit.id', ['id' => $item->id]) }}" class="btn btn-primary btn-sm" role="button">Edit</a>
+              <form method="POST" action="{{ route('news-delete.id', ['id' => $item->id]) }}">
+                  @method('DELETE')
+                  @csrf
+                  <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+              </form>
+            </div>
           </td>
         </tr>
     @endforeach

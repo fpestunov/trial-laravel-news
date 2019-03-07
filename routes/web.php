@@ -10,10 +10,10 @@ Route::get('/manager', 'NewsController@manager');
 
 Route::get('/manager/news/create', 'NewsController@create')->name('news-add');
 
-Route::get('/manager/news/{id}/edit', 'NewsController@edit')->name('news-edit.id');
+Route::get('/manager/news/{newsItem}/edit', 'NewsController@edit')->name('news-edit.id');
 
 Route::post('/manager/news', 'NewsController@store');
 
-Route::patch('/manager/news/{id}', 'NewsController@update');
+Route::patch('/manager/news/{newsItem}', 'NewsController@update');
 
-Route::delete('/manager/news/{id}', 'NewsController@destroy')->name('news-delete.id');
+Route::delete('/manager/news/{newsItem}', 'NewsController@destroy')->name('news-delete.id');
