@@ -17,7 +17,14 @@ class NewsController extends Controller
     {
         $news = $news->orderBy('created_at', 'desc')
             ->get();
-        return view('index', compact('news'));
+        return view('news.index', compact('news'));
+    }
+
+    public function manager(News $news)
+    {
+        $news = $news->orderBy('created_at', 'desc')
+            ->get();
+        return view('manager.index', compact('news'));
     }
 
     /**

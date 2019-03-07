@@ -17,6 +17,6 @@ class CategoriesController extends Controller
     {
         $news = $category->news
             ->sortByDesc('created_at');
-        return view('index', compact('news'));
+        return view('news.index', compact('news'));
     }
 }
