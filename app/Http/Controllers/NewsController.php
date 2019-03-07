@@ -47,9 +47,9 @@ class NewsController extends Controller
      * @param  \App\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function show(News $news)
+    public function show(News $newsItem)
     {
-        //
+        return view('news.show', compact('newsItem'));
     }
 
     /**

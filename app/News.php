@@ -15,5 +15,13 @@ class News extends Model
     public function scopeFreshFirst($query)
     {
         return $query->orderBy('id', 'desc');
+    }   
+
+    public function parseBody()
+    {
+        return collect(explode("\n\n", $this->body))
+                ->map(function ($item) {
+                    return "<p>{$item}</p>";
+                })->implode("\n");
     }    
 }
