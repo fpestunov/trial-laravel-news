@@ -135,4 +135,4 @@ php artisan make:controller CategoriesController
 
 - Сообщения об ошибках валидации
 
-Коммит [@]()
+Коммит [@e2fa3df](https://github.com/fpestunov/trial-laravel-news/commit/e2fa3df24db04e96976b761af7531bf9fb9d9eb9)
