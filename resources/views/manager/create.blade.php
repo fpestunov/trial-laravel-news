@@ -9,10 +9,10 @@
             <div class="card-body">
                 <form method="POST" action="{{ route('news-add') }}">
                     @csrf
-
+                    @include('errors')
                     <div class="form-group">
                         <label for="title">Title:</label>
-                        <input name="title" type="text" class="form-control" required>
+                        <input name="title" type="text" class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" value="{{ old('title') }}" required>
                     </div>
 
                     <div class="form-group">
@@ -26,7 +26,7 @@
 
                     <div class="form-group">
                         <label for="body">Body:</label>
-                        <textarea name="body" id="body" class="form-control" rows="8" required></textarea>
+                        <textarea name="body" id="body" class="form-control {{ $errors->has('body') ? 'is-invalid' : '' }}" rows="8" required>{{ old('body') }}</textarea>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Publish</button>

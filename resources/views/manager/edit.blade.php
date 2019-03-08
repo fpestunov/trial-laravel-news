@@ -10,10 +10,10 @@
                 <form method="POST" action="{{ route('news-update.id', ['id' => $newsItem->id]) }}">
                     {{ method_field('PATCH') }}
                     @csrf
-
+                    @include('errors')
                     <div class="form-group">
                         <label for="title">Title:</label>
-                        <input name="title" type="text" class="form-control" value="{{ $newsItem->title }}" required>
+                        <input name="title" type="text" class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" value="{{ $errors->has('title') ? old('title') : $newsItem->title }}" required>
                     </div>
 
                     <div class="form-group">
@@ -27,7 +27,7 @@
 
                     <div class="form-group">
                         <label for="body">Body:</label>
-                        <textarea name="body" id="body" class="form-control" rows="8" required>{{ $newsItem->body }}</textarea>
+                        <textarea name="body" id="body" class="form-control {{ $errors->has('body') ? 'is-invalid' : '' }}" rows="8" required>{{ $errors->has('body') ? old('body') : $newsItem->body }}</textarea>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Publish</button>

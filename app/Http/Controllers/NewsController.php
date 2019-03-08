@@ -47,9 +47,9 @@ class NewsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required',
+            'title' => 'required|min:3',
             'category' => 'required',
-            'body' => 'required',
+            'body' => 'required|min:10',
         ]);
 
         $news = News::create([
@@ -96,9 +96,9 @@ class NewsController extends Controller
         // dd($newsItem);
 
         $this->validate($request, [
-            'title' => 'required',
+            'title' => 'required|min:3',
             'category' => 'required',
-            'body' => 'required',
+            'body' => 'required|min:10',
         ]);
 
         $newsItem->update([
