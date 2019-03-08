@@ -18,6 +18,6 @@ DB_USERNAME=homestead
 DB_PASSWORD=secret
 ```
 5. Выполните команду `php artisan migrate`
-6. Заполните в базе данных таблицы `categories` и `news` или загрузите их из файла `laranews.sql`
+6. Заполните в базе данных таблицы `categories` и `news` или загрузите их из файла [`laranews.sql`](laranews.sql)
 7. Выполните команду `php artisan key:generate`
 8. Выполните команду `php artisan serve` и перейдите по адресу [http://localhost:8000](http://localhost:8000)
