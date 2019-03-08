@@ -2,7 +2,10 @@
 
 @section ('content')
 
-<a href="{{ route('news-add') }}">Add item</a>
+<div class="float-right" style="margin-bottom: 1rem;">
+  <a href="{{ route('news-create') }}" class="btn btn-primary" role="button">Add item</a>
+</div>
+
 <table class="table">
   <thead>
     <tr>

@@ -34,7 +34,8 @@ class NewsController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        return view('manager.create', compact('categories'));
     }
 
     /**
@@ -45,7 +46,19 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'category' => 'required',
+            'body' => 'required',
+        ]);
+
+        $news = News::create([
+            'title' => request('title'),
+            'category_id' => request('category'),
+            'body' => str_replace("\r", "", request('body'))
+        ]);
+
+        return redirect(route('manager'));
     }
 
     /**

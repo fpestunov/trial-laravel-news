@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class News extends Model
 {
+    protected $guarded = [];
 
     public function category()
     {
@@ -19,9 +20,9 @@ class News extends Model
 
     public function parseBody()
     {
-        return collect(explode("\n\n", $this->body))
+        return collect(explode("\n", $this->body))
                 ->map(function ($item) {
-                    return "<p>{$item}</p>";
+                    return strlen($item) ? "<p>{$item}</p>" : "";
                 })->implode("\n");
     }    
 }
