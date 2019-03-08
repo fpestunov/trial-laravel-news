@@ -114,8 +114,10 @@ php artisan make:controller CategoriesController
 
 Коммит [@49ee94c](https://github.com/fpestunov/trial-laravel-news/commit/49ee94c1e52231391f3e3e316bba8127a4f8980b)
 
-
 ### 12. Раздела менеджера - добавление новости
 
-Коммит [@]()
+Коммит [@f327b31](https://github.com/fpestunov/trial-laravel-news/commit/f327b31af218935e385e7225f2a40d8482679679)
 
+### 13. Раздела менеджера - редактирование новости
+
+Коммит [@]()

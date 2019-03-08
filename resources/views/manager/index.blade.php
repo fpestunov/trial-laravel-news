@@ -29,7 +29,7 @@
               <form method="POST" action="{{ route('news-delete.id', ['id' => $item->id]) }}">
                   @method('DELETE')
                   @csrf
-                  <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                  <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
               </form>
             </div>
           </td>

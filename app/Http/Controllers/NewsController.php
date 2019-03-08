@@ -80,7 +80,8 @@ class NewsController extends Controller
      */
     public function edit(News $newsItem)
     {
-        //
+        $categories = Category::all();
+        return view('manager.edit', compact('newsItem', 'categories'));
     }
 
     /**
@@ -92,7 +93,21 @@ class NewsController extends Controller
      */
     public function update(Request $request, News $newsItem)
     {
-        //
+        // dd($newsItem);
+
+        $this->validate($request, [
+            'title' => 'required',
+            'category' => 'required',
+            'body' => 'required',
+        ]);
+
+        $newsItem->update([
+            'title' => request('title'),
+            'category_id' => request('category'),
+            'body' => str_replace("\r", "", request('body'))
+        ]);
+
+        return redirect(route('manager'));
     }
 
     /**

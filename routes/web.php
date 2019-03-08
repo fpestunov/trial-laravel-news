@@ -14,6 +14,6 @@ Route::get('/manager/news/{newsItem}/edit', 'NewsController@edit')->name('news-e
 
 Route::post('/manager/news', 'NewsController@store')->name('news-add');
 
-Route::patch('/manager/news/{newsItem}', 'NewsController@update');
+Route::patch('/manager/news/{newsItem}', 'NewsController@update')->name('news-update.id');
 
 Route::delete('/manager/news/{newsItem}', 'NewsController@destroy')->name('news-delete.id');
